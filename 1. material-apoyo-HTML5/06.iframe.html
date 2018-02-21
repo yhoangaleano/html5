@@ -1,0 +1,207 @@
+<!doctype html>
+
+<html>
+
+<!--=====================================
+CABEZA DEL DOCUMENTO
+======================================-->
+
+<head>
+
+    <!-- ETIQUETA META CON ATRIBUTO CHARSET PARA CODIFICAR LOS CARACTERES -->
+
+    <meta charset="utf-8">
+
+    <!-- ETIQUETA META CON ATRIBUTO AUTHOR PARA DEFINIR EL AUTOR DE LA PÁGINA -->
+    
+    <meta name="author" content="Pepito Perez">
+
+    <!-- ETIQUETA META CON ATRIBUTO NAME-DESCRIPTION PARA DESCRIBIR LA PÁGINA -->
+    
+    <meta name="description" content="Acá se pone la descripción del sitio">
+
+    <!-- ETIQUETA META CON ATRIBUTO NAME-KEYWORDS PARA PONER PALABRAS CLAVES -->
+    
+    <meta name="keywords" content="SENA, html, desarrollo web">
+
+    <!-- ETIQUETA PARA PONER EL TÍTULO DE LA PÁGINA -->
+    
+    <title>IFRAME</title>
+
+    <!-- ETIQUETA PARA VINCULAR PROPIEDADES EXTERNAS: EL ICONO DE LA PÁGINA Y HOJAS DE ESTILO -->
+    
+    <link rel="icon" href="img/icono.png">  
+
+</head>
+
+<!--=====================================
+CUERPO DEL DOCUMENTO
+======================================-->
+    
+<body>
+
+    <!-- ETIQUETA PARA CABEZOTE -->
+   
+    <header>Cabezote</header>
+
+    <!-- ETIQUETA PARA BARRAS DE NAVEGACIÓN -->
+    
+    <nav>Barra de navegación</nav>
+
+    <!-- ETIQUETA PARA CREAR SECCIONES -->
+    
+    <section>Sección principal</section>
+
+    <!-- ETIQUETA PARA CREAR COLUMNAS-->
+    
+    <aside>Columna</aside>
+
+    <!-- ETIQUETA PARA CREAR ARTÍCULOS -->
+    
+    <article>Artículo</article>
+
+    <!-- ETIQUETA PARA TÍTULOS -->
+    
+    <h1>Título</h1>
+    <h2>Título</h2>
+    <h3>Título</h3>
+    <h4>Título</h4>
+    <h5>Título</h5>
+    <h6>Título</h6>
+
+    <!-- ETIQUETA PARA CREAR PÁRRAFOS Y SALTO DE LÍNEAS -->
+    
+    <p>Esto es un <b>párrafo</b>, <br>esto es otro párrafo</p>
+    
+    <!-- ETIQUETA PARA CREAR DIVISIONES -->
+
+    <hr>
+
+    <!-- ETIQUETA PARA CREAR VÍNCULOS -->
+    
+    <a href="#">Vínculo</a>
+
+    <!-- ETIQUETA PARA LLAMAR IMÁGENES EXTERNAS -->
+    
+    <figure>
+        <img src="img/imagen.jpg">
+    </figure>
+    <figcaption>Pie de página a la imagen</figcaption>
+
+    <!-- ETIQUETA PARA CREAR LISTAS NUMÉRICAS -->
+    
+    <ol>
+        <li>Carro</li>
+        <li>Barco</li>
+        <li>Avión</li>
+    </ol>
+
+    <!-- ETIQUETA PARA CREAR LISTAS NO NUMÉRICAS -->
+    
+    <ul>
+        <li>Carro</li>
+        <li>Barco</li>
+        <li>Avión</li>
+    </ul>
+
+    <!-- ETIQUETA PARA CENTRAR -->
+
+    <center>Estoy en el centro</center>
+
+    <!-- ETIQUETA PARA SIMULAR CÓDIGO -->
+
+    <code>Esto es texto codificado</code>
+
+    <!-- ETIQUETA PARA CREAR TABLAS -->
+    
+    <table border="1">
+        
+        <thead>
+        
+          <tr>
+            <th>MES</th>
+            <th>AHORRO</th>
+          </tr>
+          
+        </thead>
+         
+        <tbody> 
+         
+           <tr>
+            <td>Enero</td>
+            <td>$100</td>
+          </tr>
+          
+           <tr>
+            <td>Febrero</td>
+            <td>$200</td>
+          </tr>
+          
+        </tbody>
+    
+    </table>
+
+    <!-- ETIQUETA PARA CREAR MEDIDAS Y ESTADÍSTICAS <meter> Y <progress> -->
+    
+    <h1>Resultados del Examen</h1>
+    <p>Carlos: <meter value="94" min="0" max="100" high="90"></meter></p>
+    <p>Andrés: <meter value="60" min="0" max="100" high="90"></meter></p>
+    <p>Ana: <meter value="85" min="0" max="100" high="90"></meter></p>
+    <p>Pedro: <meter value="45" min="0" max="100" high="90"></meter></p>
+
+    <h2>Resultados de Ventas</h2>
+    <p>Fenero: <progress value="94" min="0" max="100"></progress></p>
+    <p>Febrero: <progress value="60" min="0" max="100"></progress></p>
+    <p>Marzo: <progress value="85" min="0" max="100"></progress></p>
+    <p>Abril: <progress value="45" min="0" max="100"></progress></p>
+
+    <!-- ETIQUETA PARA CREAR SONIDO -->
+    
+    <audio controls loop preload="auto">
+    
+    <!-- Ogg VORBIS .ogg-->
+    <!-- MP3 .mp3-->
+    <!-- WAV .wav-->
+    <!-- ACC .m4a, .m4b, .m4p, .mp4, .acc -->
+    
+        <source src="audio/audio.m4a" type="audio/mp4">
+        <source src="audio/audio.mp3" type="audio/mp3">
+        <source src="audio/audio.ogg" type="audio/ogg">
+        
+    </audio>
+
+    <!-- ETIQUETA PARA CREAR VIDEO -->
+        
+    <video controls loop width="500" height="200">
+    
+    <!--THEORA OGG .ogg-->
+    <!-- MP4 .mp4-->
+    <!-- WEBM .webm -->
+    
+        <source src="video/video.mp4" type="video/mp4">
+        <source src="video/video.ogv" type="video/ogg">
+        <source src="video/video.webm" type="video/webm">
+     
+    </video>
+
+    <!-- ETIQUETA PARA INSERTAR MULTIMEDIA O PÁGINAS EXTERNAS -->
+        
+    <iframe width="500" height="280" src="https://www.youtube.com/embed/jRuXTUwOfoQ" frameborder="0" allowfullscreen></iframe>
+    
+    <iframe width="500" height="281" src="https://player.vimeo.com/video/98417189" frameborder="0" allowfullscreen></iframe>
+    
+    <iframe width="500" height="281"  frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/96144978&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+    
+   <iframe src="http://es.calameo.com/read/0045454131fd39bf9669f" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency allowfullscreen style="margin:0 auto;"></iframe>
+   
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7163857453047!2d-75.5709251853638!3d6.300947927458963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442f25d6670d4d%3A0x8043999e5e767b96!2sCentro+de+Tecnolog%C3%ADa+de+la+Manufactura+Avanzada+-+SENA!5e0!3m2!1ses!2sco!4v1518590129978" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+       
+   <iframe src="http://www.elcolombiano.com/"  width="100%" height="600” scrolling="auto" frameborder="0" AllowTransparency="true"></iframe> 
+
+    <!-- ETIQUETA PARA CREAR PIE DE PÁGINA -->
+    
+    <footer>Este es el pie de página</footer>
+    
+    </body>
+
+</html>

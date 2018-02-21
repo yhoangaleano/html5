@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilos.css"/> 
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        if (Modernizr.draganddrop && window.FileList) {
+          //alert("Tu navegador SI soporte API file o Drag&Drop");
+        } else {
+          alert("tu navegador NO soporta API o Drag&Drop");
+        }
+
+        $('#zona_arrastrar').bind({
+          "drop": onFilesDropped,
+          "dragover": onDragOver
+        });
+
+        function onDragOver(evento) {
+          evento.stopPropagation();
+          evento.preventDefault();
+        }
+
+        function onFilesDropped(evento) {
+          evento.stopPropagation();
+          evento.preventDefault();
+          
+          //JQuery envuelve el evento original
+          var dt = evento.dataTransfer || (evento.originalEvent && evento.originalEvent.dataTransfer);
+          var archivos = evento.target.files || (dt && dt.files);
+
+          $('#salida').html("");
+
+          for (var i = 0; i <= archivos.length; i++) {
+            var informacion = "<p>Nombre: " + archivos[i].name + ", Tamaño: " + archivos[i].size + ", Tipo MIME: " + archivos[i].type + "</p>";
+            $('#salida').append(informacion);
+          }
+        }
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Uso de Drag and Drop</h1>
+    <p>Arrastra tus archivos aquí: </p>
+    <div id="zona_arrastrar"></div>
+    <p>Resultado: </p>
+    <div id="salida"></div>
+  </body>
+</html>

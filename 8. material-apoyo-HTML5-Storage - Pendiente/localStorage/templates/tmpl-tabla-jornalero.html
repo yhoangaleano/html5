@@ -1,0 +1,35 @@
+<script id="tmpl-tabla-jornalero" type="text/x-tmpl">
+
+	<table class="table">
+
+		<thead>
+			<tr>
+				<th>Código</th>
+				<th>Nombres</th>
+				<th>Correo</th>
+				<th>Fecha Nacimiento</th>
+				<th>Peso</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for (var i=0; i < o.length; i++) { %}
+
+			<tr>
+				<td>{%=i%}</td>
+				<td>{%=o[i].nombre%}</td>
+				<td>{%=o[i].correo%}</td>
+				<td>{%=o[i].fecha%}</td>
+				<td>{%=o[i].peso%}</td>
+				<td>
+					<button class='btn btn-primary btn-modificar' onclick='modificar("{%=i%}")'>Modificar</button>
+
+					<button class='btn btn-danger btn-eliminar' onclick='eliminar("{%=i%}")'>Eliminar</button>
+				</td>
+			</tr>
+
+			{% } %}
+		</tbody>
+
+	</table>
+</script>

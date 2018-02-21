@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Propiedades de Color</title>
+
+<style>
+
+.grupo{
+	width:200px;
+	height:200px;
+	margin:20px;
+	}
+	
+#c1{
+	background:blueviolet;	
+	}
+	
+#c2{
+	/* 
+	
+	Los colores hexadecimales se dividen en 3 pares:
+
+	Son colores rgb
+	Red, Green and Blue.
+
+	Los colores hexadecimales van desde el numero 0 hasta el 9 y luego pasan de la a hasta la letra f.
+
+	- El primer par es el rojo:
+		00 Significa apagado
+		ff significa encendido
+
+	- El segundo par es el color verde
+
+	- El tercer par es el color azul
+	
+
+	*/
+	background: #aaffff;	
+	
+	}
+	
+/*http://html-color-codes.info/codigos-de-colores-hexadecimales/*/
+
+#c3{
+
+	/* 
+	
+	El rgba es similar al anterior (Rojo, verde y azul pero ademas tiene el alfa. Este sirve para colocar transparencia a los colores) 
+
+	Si el alfa esta en 0, esta totalmente transparente
+	Si esta en uno significa que esta intenso
+	
+	
+	*/
+
+	background:rgba(180,0,70,.5);
+	}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="c1" class="grupo"></div>
+
+<div id="c2" class="grupo"></div>
+
+<div id="c3" class="grupo"></div>
+
+</body>
+</html>

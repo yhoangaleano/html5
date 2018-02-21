@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        if (Modernizr.draganddrop && window.FileList) {
+          //alert("Tu navegador SI soporte File API file o Drag&Drop");
+        } else {
+          alert("tu navegador NO soporta File API o Drag&Drop");
+        }
+
+        $('#archivo').change(manejoArchivos);
+
+        function manejoArchivos(evento) {
+          var archivo = evento.target.files[0];
+
+          if (!archivo.type.match("image.*")) {
+            alert("Debe seleccionar una imagen");
+            return;
+          }
+
+          var reader = new FileReader();
+
+          reader.onload = function(evento) {
+            var img = new Image();
+            img.src = evento.target.result;
+            $('#contenido').append(img);
+            alert('Imagen agregada');
+          };
+
+          reader.readAsDataURL(archivo);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lectura de Imágenes</h1>
+    <form>
+      <label>Selecciona un archivo</label>
+      <input type="file" name="archivo" id="archivo"/>
+      <p>Contenido imagen:</p>
+      <div id="contenido"></div>
+    </form>
+  </body>
+</html>

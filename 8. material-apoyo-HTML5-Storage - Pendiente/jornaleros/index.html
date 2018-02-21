@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/alertify.min.css">
+    <link rel="stylesheet" href="css/themes/bootstrap.min.css" />
+
+    <style>
+        html,
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .margen-arriba {
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+        
+        .img-finca {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row margen-arriba">
+            <div class="col-md-12">
+
+                <h1 class="text-center">Finca Jornaleros</h1>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="jumbotron">
+
+                    <form role="form" id="formJornalero">
+
+                        <input id="txtCodigo" type="hidden" readonly>
+
+                        <div class="form-group">
+                            <label for="txtNombre">Nombre</label>
+                            <input type="text" id="txtNombre" class="form-control" placeholder="Ejm: Yhoan" required>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="txtCorreo">
+                                Correo electrónico
+                            </label>
+                            <input type="email" id="txtCorreo" class="form-control" placeholder="Ejm: yhoangaleano@gmail.com" />
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="txtFecha">
+                                Fecha Nacimiento
+                            </label>
+                            <input type="date" class="form-control" id="txtFecha" placeholder="10/12/1993" />
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="txtPeso">
+                                Peso
+                            </label>
+                            <input type="number" id="txtPeso" class="form-control" placeholder="Ejm: 67" />
+                        </div>
+
+                        <div class="form-group">
+                            <button id="btnGuardar" type="submit" class="btn btn-success">
+								Guardar jornalero
+							</button>
+
+                            <button id="btnCancelar" type="button" class="btn btn-default">
+                                Cancelar
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img alt="Finca El Berriondo" src="img/finca.jpg" class="img-finca" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table" id="tblJornaleros">
+                    <thead>
+                        <tr>
+                            <th>
+                                Código
+                            </th>
+                            <th>
+                                Nombre completo
+                            </th>
+                            <th>
+                                Correo electrónico
+                            </th>
+                            <th>
+                                Fecha nacimiento
+                            </th>
+                            <th>
+                                Peso
+                            </th>
+                            <th>
+                                Opciones
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js">
+    </script>
+
+    <script src="js/bootstrap.min.js">
+    </script>
+
+    <script src="js/alertify.min.js">
+    </script>
+
+    <script>
+        alertify.defaults.transition = "slide";
+        alertify.defaults.theme.ok = "btn btn-primary";
+        alertify.defaults.theme.cancel = "btn btn-danger";
+        alertify.defaults.theme.input = "form-control";
+        alertify.defaults.glossary.ok = "Aceptar";
+        alertify.defaults.glossary.cancel = "Cancelar";
+    </script>
+
+    <script src="js/tmpl.min.js">
+    </script>
+
+    <script type="text/x-tmpl" id="tmpl-tbl-jornaleros">
+        <tr>
+            <td>
+                {%= o._codigo %}
+            </td>
+
+            <td>
+                {%= o._nombre %}
+            </td>
+
+            <td>
+                {%= o._correo %}
+            </td>
+
+            <td>
+                {%= o._fecha %}
+            </td>
+
+            <td>
+                {%= o._peso %}
+            </td>
+
+            <td>
+                <button class="btn btn-primary btnEditar" data-id="{%= o._codigo %}">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </button>
+
+                <button class="btn btn-danger btnEliminar" data-id="{%= o._codigo %}">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </script>
+
+    <script src="js/app.js">
+    </script>
+
+</body>
+
+</html>

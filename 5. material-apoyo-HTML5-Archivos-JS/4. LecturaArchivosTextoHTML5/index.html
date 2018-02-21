@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        if (Modernizr.draganddrop && window.FileList) {
+          //alert("Tu navegador SI soporte File API file o Drag&Drop");
+        } else {
+          alert("tu navegador NO soporta File API o Drag&Drop");
+        }
+
+        $('#archivo').change(manejoArchivos);
+
+        function manejoArchivos(evento) {
+          var archivo = evento.target.files[0];
+
+          if (archivo.type !== "text/plain") {
+            alert("Debe seleccionar un archivo de texto");
+            return;
+          }
+
+          var reader = new FileReader();
+
+          reader.onload = function(evento) {
+            var resultadoTexto = evento.target.result;
+            $('#contenido').append(resultadoTexto);
+          };
+
+          reader.readAsText(archivo);
+
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lectura de archivos</h1>
+    <form>
+      <label>Selecciona un archivo</label>
+      <input type="file" name="archivo" id="archivo"/>
+      <p>Contenido del archivo:</p>
+      <textarea cols="100" rows="15" id="contenido"></textarea>
+    </form>
+  </body>
+</html>

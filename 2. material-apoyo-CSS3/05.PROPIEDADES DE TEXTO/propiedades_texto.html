@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Propiedades de Texto</title>
+
+	<!-- nuevo -->
+	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+	<style>
+		header {
+			position: relative;
+			margin: 20px auto;
+			width: 1000px;
+			height: 120px;
+
+			/* se quita el background de esta regla */
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			/* nuevo */
+			font-family: sans-serif;
+		}
+
+		nav {
+			position: relative;
+			margin: auto;
+			width: 1000px;
+			height: 48px;
+		}
+
+		#top {
+			position: relative;
+			margin: 20px auto;
+			width: 1000px;
+			height: 192px;
+		}
+
+		section {
+			position: relative;
+			margin: auto;
+			width: 1000px;
+			height: 453px;
+
+			/* se quita el background de esta regla */
+		}
+
+		footer {
+			position: relative;
+			margin: 20px auto;
+			width: 1000px;
+			height: 70px;
+			/* se cambia el color del background */
+			background: rgba(100, 0, 255, 1);
+
+			/* se crean esta tres lineas hacia abajo */
+			text-align: center;
+			line-height: 70px;
+			color: white;
+		}
+
+		#logo {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			width: 200px;
+			height: 60px;
+			/* nuevo */
+			font-family: 'Kaushan Script', cursive;
+			/* nuevo */
+			font-size: 50px;
+			/* nuevo */
+			text-align: center;
+			/* nuevo */
+			line-height: 60px;
+
+
+			/* Se quita el background esta regla css */
+		}
+
+		.redes {
+			position: absolute;
+			width: 42px;
+			height: 42px;
+			background: #ccc;
+			border-radius: 100%;
+
+			/* nuevo 3 lineas */
+			text-align: center;
+			line-height: 42px;
+			color: white;
+		}
+
+		#icono1 {
+			top: 42px;
+			right: 120px;
+			/* nuevo */
+			background: blue;
+		}
+
+		#icono2 {
+			top: 42px;
+			right: 71px;
+			/* nuevo */
+			background: green;
+		}
+
+		#icono3 {
+			top: 42px;
+			right: 19px;
+			/* nuevo */
+			background: red;
+		}
+
+		.botones {
+			float: left;
+			width: 196px;
+			margin: 0px 2px;
+			height: 48px;
+			/* nuevo cambia el color de fondo de los botones */
+			background: rgba(100, 0, 255, 1);
+			/* nuevo 4 lineas abajo */
+			font-family: 'Kaushan Script', cursive;
+			color: white;
+			text-align: center;
+			line-height: 48px;
+		}
+
+		#top ul {
+			width: 1010px;
+			height: 192px;
+		}
+
+		#top ul li {
+			float: left;
+			width: 326px;
+			height: 192px;
+			margin-right: 10px;
+			/* nuevo */
+			text-align: center;
+
+			/* se quita de esta regla el background que tenia */
+		}
+
+		/* nueva esta regla css */
+
+		#top ul li img {
+			border-radius: 100%;
+			height: 100px;
+		}
+
+		/* nueva esta regla css */
+
+		#top ul li h1 {
+			font-family: 'Kaushan Script', cursive;
+		}
+
+		/* nueva esta regla css */
+
+		#top ul li p {
+			font-size: 14px;
+			margin: 10px;
+		}
+
+		aside#izq {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 453px;
+			background: #333;
+		}
+
+		article {
+			position: absolute;
+			left: 200px;
+			top: 0;
+			width: 600px;
+			height: 453px;
+
+			/* se quita el background de esta regla */
+		}
+
+		/* nueva esta regla css */
+
+		article h1 {
+			font-family: 'Kaushan Script', cursive;
+			font-size: 40px;
+			margin: 20px;
+		}
+
+		/* nueva esta regla css */
+
+		article p img {
+			float: left;
+			margin-right: 20px;
+		}
+
+		/* nueva esta regla css */
+
+		article p {
+			margin: 5px 20px;
+			font-size: 14px;
+			text-align: justify;
+
+		}
+
+		aside#der {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 200px;
+			height: 453px;
+			background: #333;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Inicia Cabezote -->
+
+	<header>
+
+		<div id="logo">Logotipo</div>
+
+		<div id="icono1" class="redes">X</div>
+		<div id="icono2" class="redes">X</div>
+		<div id="icono3" class="redes">X</div>
+
+	</header>
+
+	<!-- Cierra Cabezote -->
+
+	<!-- Inicia Barra de Navegación -->
+	<nav>
+
+		<ul>
+
+			<li class="botones">Botón 1</li>
+			<li class="botones">Botón 2</li>
+			<li class="botones">Botón 3</li>
+			<li class="botones">Botón 4</li>
+			<li class="botones">Botón 5</li>
+
+		</ul>
+
+	</nav>
+
+	<!-- Cierra Barra de Navegación -->
+
+	<!-- Inicia parte Superior -->
+
+	<div id="top">
+
+		<ul>
+			<li>
+				<img src="img01.jpg" width="100">
+				<h1>Lorem Ipsum</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+			</li>
+
+			<li>
+				<img src="img02.jpg" width="100">
+				<h1>Lorem Ipsum</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</li>
+
+			<li>
+				<img src="img03.jpg" width="100">
+				<h1>Lorem Ipsum</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</li>
+		</ul>
+
+	</div>
+
+	<!-- Cierra parte Superior -->
+
+	<!-- Inicia Sección -->
+
+	<section>
+
+		<aside id="izq"></aside>
+
+		<article>
+
+			<h1>Lorem Ipsum</h1>
+			<p>
+				<img src="foto.jpg" width="250">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet libero in leo suscipit consequat. Vivamus
+				et nunc neque. Proin vel eros nec nisi luctus laoreet sed vitae nulla. Sed non nulla interdum, consequat turpis at, euismod
+				leo. Fusce fringilla convallis viverra. Integer vel lacus id tortor viverra luctus dapibus et nulla. Integer scelerisque
+				neque eget tortor bibendum, non ultricies tellus vehicula. Morbi imperdiet gravida nisl, non congue ante fringilla in.
+				Mauris laoreet accumsan ultrices.</p>
+			<br>
+			<p>Sed feugiat, magna non sagittis porttitor, massa risus iaculis nisi, id semper ante nisi sed justo. In placerat ipsum
+				in metus consectetur suscipit. Donec ante nibh, pulvinar eu lectus vel, aliquam cursus enim. Proin nibh eros, tincidunt
+				et est quis, elementum ultrices eros. Mauris accumsan ac metus in viverra.Integer fringilla urna eu fringilla blandit.
+				Suspendisse et tellus venenatis, aliquam sapien at, pharetra orci. Etiam elit arcu, aliquam eu turpis bibendum, facilisis
+				dapibus augue. </p>
+
+		</article>
+
+		<aside id="der"></aside>
+
+	</section>
+
+	<!-- Cierra Sección -->
+
+	<!-- Inicia Pie de Página -->
+
+	<footer>
+
+		&copy; Todos los derechos reservados.
+		<!--http://www.ascii.cl/htmlcodes.htm-->
+	</footer>
+
+	<!-- Cierra Pie de Página -->
+
+
+</body>
+
+</html>

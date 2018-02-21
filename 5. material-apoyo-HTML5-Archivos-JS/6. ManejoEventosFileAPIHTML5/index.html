@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        var archivo = null;
+        var reader = null;
+
+        if (Modernizr.draganddrop && window.FileList) {
+          //alert("Tu navegador SI soporte File API file o Drag&Drop");
+        } else {
+          alert("tu navegador NO soporta File API o Drag&Drop");
+        }
+
+        $('#archivo').change(manejoArchivos);
+        $('#iniciarLectura').click(iniciarLectura);
+        $('#detenerLectura').click(detenerLectura);
+
+        function manejoArchivos(evento) {
+          reiniciarValores();
+          archivo = evento.target.files[0];
+          $("#nombre_archivo").html(archivo.name + ", Tamaño: " + archivo.size);
+        }
+
+        function reiniciarValores() {
+          $("#progreso").empty();
+          $("#leyendo").text(0);
+          $('#progressbar').val(0);
+        }
+
+        function iniciarLectura(evento) {
+          reiniciarValores();
+          if (archivo !== null) {
+            reader = new FileReader(evento);
+
+            //Evento onloadstart
+            reader.onloadstart = function(evento) {
+              $("#progreso").append("<p>Inició la lectura del archivo (onloadstart)</p>");
+            };
+
+            //Evento onloadend
+            reader.onloadend = function(evento) {
+              $("#progreso").append("<p>Terminó la lectura del archivo (onloadend)</p>");
+            };
+
+            //Evento onload
+            reader.onload = function(evento) {
+              $("#contador").append("<p>Lectura del archivo: 100%</p>");
+              $("#progreso").append("<p>Lectura del archivo completado (onload)</p>");
+            };
+
+            //Evento onprogress
+            reader.onprogress = function(evento) {
+              if (evento.lengthComputable) {
+                var calculo = Math.round((evento.loaded / evento.total) * 100);
+                $("#leyendo").text(calculo);
+                $('#progressbar').val(calculo);
+              }
+            };
+
+            //Evento onerror
+            reader.onerror = function(evento) {
+              $("#progreso").append("<p>Ocurrió un error con el archivo:</p>");
+            };
+
+            //Evento onabort
+            reader.onabort = function(evento) {
+              $("#progreso").append("<p>La lectura se abortó</p>");
+            };
+
+            //Leemos el archivo
+            reader.readAsBinaryString(archivo);
+          }
+          else {
+            alert("Debes seleccionar un archivo");
+          }
+        }
+
+        function detenerLectura(evento) {
+          if (reader)
+            reader.abort();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lectura de archivos</h1>
+    <form action="">
+      <label>Selecciona un archivo</label>
+      <input type="file" name="archivo" id="archivo"/>
+    </form>
+    <p>Nombre archivo: <span id="nombre_archivo"></span></p>
+    <p>Leer el contenido del archivo:</p>
+    <button id="iniciarLectura">Iniciar Lectura</button>
+    <button id="detenerLectura">Cancelar Lectura</button>
+    <p>Progreso de la lectura: <span id="leyendo">0</span>%</p>
+    <progress id="progressbar" value="0" max="100"></progress>
+    <div id="progreso"></div>
+  </body>
+</html>

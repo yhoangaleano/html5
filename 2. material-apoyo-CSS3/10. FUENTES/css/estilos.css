@@ -1,0 +1,70 @@
+@font-face{
+  font-family: Pacifico;
+  src:url(../fuentes/Pacifico.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'PacificoRegular';
+  src: url('../fuentes/Pacifico-webfont.eot');
+  src: url('../fuentes/Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fuentes/Pacifico-webfont.woff') format('woff'),
+    url('../fuentes/Pacifico-webfont.ttf') format('truetype'),
+    url('../fuentes/Pacifico-webfont.svg#PacificoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: PacificoRegular,Arial,Georgia,Serif;
+  color: gray;
+}
+
+h1{
+  text-shadow: 5px 5px 8px gray; 
+  color: red;
+}
+
+h2{
+  font-family: Pacifico,Arial;
+  color:yellowgreen;
+}
+
+.cincel{
+  width: 100px;
+  height: 35px;
+  background: #CCC;
+  text-shadow: 1px 1px white, -1px -1px #333;
+  font-size: x-large;
+  text-align: center;
+  color:#D1D1D1;
+  font-weight: bold;
+  font-family: "Gill Sans MT", "Gill Sans", Arial;
+}
+
+.neon{
+  margin-top: 20px;
+  text-align: center;
+  width: 300px;
+  height: 80px;
+  background: black;
+  font-size: 50px;
+  color: #fff;
+  font-family: "Gill Sans MT", "Gill Sans", Arial;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 20px #ff00de, 0 0 70px #ff00de;
+}
+
+/*Texto multicolumna*/
+p{
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  text-align: justify;
+  -moz-column-gap: 40px;
+  -webkit-column-gap: 40px;
+  column-gap: 40px;
+  -moz-column-rule:1px  dashed gray;
+  -webkit-column-rule:  1px  dashed gray;
+  column-rule: 1px  dashed gray;
+}

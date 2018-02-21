@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapas Geolocalización</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilos.css"/>
+    <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+    <script src="js/libs/modernizr-2.6.2/modernizr.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var mapa=null;
+        var mapaMarcador=null;
+
+        if (Modernizr.geolocation) {
+          //MaximumAge: monitorea cada segundo, timeout: detiene el intento de lectura despues de 3 minutos, enableHighAccuracy busca el resultado más preciso
+          navigator.geolocation.watchPosition(mostrar_coordenadas, mostrar_errores, {maximumAge: 1000, timeout: 300000, enableHighAccuracy: true});
+        } else {
+          alert("tu navegador NO soporta Geolocalización");
+        }
+
+        //Mostrar coordenadas
+        function mostrar_coordenadas(posicion) {
+
+          var latitud = posicion.coords.latitude;
+          var longitud = posicion.coords.longitude;
+          var gmPosicion = new google.maps.LatLng(latitud, longitud);
+
+          if (mapa == null) {
+            var opciones = {center: gmPosicion, zoom: 15, mapTypeId: google.maps.MapTypeId.ROADMAP};
+            mapa = new google.maps.Map(document.getElementById("resultado"), opciones);
+            mapaMarcador = new google.maps.Marker({position: gmPosicion, title: "!Estás aquí!"});
+            mapaMarcador.setMap(mapa);
+          } else {
+            //Movemos el mapa al nuevo punto
+            mapa.panTo(gmPosicion);
+            mapaMarcador.setPosition(gmPosicion);
+          }
+        }
+
+        //Mostrar errores
+        function mostrar_errores(error) {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              alert('Permiso denegado');
+              break;
+            case error.POSITION_UNAVAILABLE:
+              alert('Posición no disponible');
+              break;
+            case error.TIMEOUT:
+              alert('Tiempo de espera agotado');
+              break;
+            default:
+              alert('Error desconocido de Geolocalización:' + error.code);
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="resultado"></div>
+  </body>
+</html>
